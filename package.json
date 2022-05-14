@@ -25,8 +25,12 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
+  "bin": {
+    "sc60": "./bin/sc.mjs"
+  },
   "sideEffects": false,
   "scripts": {
     "build": "rimraf dist && unbuild",
@@ -37,6 +41,11 @@
     "start": "esno src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.11",
+    "minimist": "^1.2.6",
+    "picocolors": "^1.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.21.1",
@@ -52,10 +61,5 @@
     "unbuild": "0.7.4",
     "vite": "2.9.6",
     "vitest": "0.9.4"
-  },
-  "dependencies": {
-    "fast-glob": "^3.2.11",
-    "minimist": "^1.2.6",
-    "picocolors": "^1.0.0"
   }
 }
