@@ -5,7 +5,7 @@ import pc from 'picocolors'
 import { program } from 'commander'
 import { version } from '../package.json'
 import type { FileMeta, Options } from './types'
-import { clacTotalLineCount, getLineCount, joinPath, randomAddLine } from './utils'
+import { clacTotalLineCount, getLineCount, joinPath, randomAddLine, readFile } from './utils'
 
 type RequiredOptions = Required<Options>
 
@@ -78,7 +78,7 @@ export async function generateCopywright(_option?: Options) {
   const paths = [option.include.map(p => joinPath(p)), option.exclude.map(p => `!${joinPath(p)}`)].flat()
   const files = await fg(paths)
   const res = files.map((file) => {
-    const content = fs.readFileSync(file, 'utf-8')
+    const content = readFile(file)
     const lines = getLineCount(content)
 
     return {

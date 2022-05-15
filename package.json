@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "commander": "^9.2.0",
+    "eol": "^0.9.1",
     "fast-glob": "^3.2.11",
     "picocolors": "^1.0.0"
   },

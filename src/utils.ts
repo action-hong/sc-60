@@ -1,5 +1,6 @@
+import fs from 'fs'
+import eol from 'eol'
 import type { FileMeta } from './types'
-
 export function random(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
@@ -23,4 +24,9 @@ export function clacTotalLineCount(res: FileMeta[]) {
 
 export function joinPath(path: string) {
   return path.startsWith('/') ? `.${path}` : `./${path}`
+}
+
+export function readFile(file: string) {
+  const content = fs.readFileSync(file, 'utf-8')
+  return eol.auto(content)
 }
