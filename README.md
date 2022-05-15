@@ -19,6 +19,15 @@ sc60
 ```
 然后你就会得到两个`txt`文档，对应前30页和后30页的代码
 
+```bash
+Options:
+  -c, --config <path>            指定配置文件路径，默认sc60.config.json
+  -i, --include <include>        指定源码范围，默认为src/**/*,逗号分开
+  -e, --exclude <exclude>        指定源码排除范围,逗号分开
+  -n, --name <name>              指定生成的文件名，默认sc
+  -t, --total-line <total-line>  指定生成的总行数，默认53*30=1590
+```
+
 ## 配置
 
 由于工作目录下有一些依赖或编译生成文件，这些不应该包含在内，因此可以自行配置：
