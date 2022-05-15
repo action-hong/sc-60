@@ -1,8 +1,8 @@
 export interface Options {
-  totalLine: number
+  totalLine?: number
   include?: string[]
   exclude?: string[]
-  name: string
+  name?: string
 }
 
 export interface FileMeta {
